@@ -45,7 +45,7 @@ public class CategoriaController {
     }
 
 
-    @ApiOperation("Deleta uma categoria")
+    @ApiOperation("Deletar uma categoria caso ela não tenha nenhum produto associado")
     @DeleteMapping
     @ResponseBody
     public ResponseEntity<String> delete(@ApiParam(value = "ID da categoria", example = "1") @RequestParam Long idCategoria) {
