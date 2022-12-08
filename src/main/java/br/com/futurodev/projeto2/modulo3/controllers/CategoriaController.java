@@ -2,9 +2,11 @@ package br.com.futurodev.projeto2.modulo3.controllers;
 
 
 import br.com.futurodev.projeto2.modulo3.Service.CategoriaService;
+import br.com.futurodev.projeto2.modulo3.Service.ProdutoService;
 import br.com.futurodev.projeto2.modulo3.dto.input.CategoriaInput;
 import br.com.futurodev.projeto2.modulo3.dto.output.CategoriaOutput;
 import br.com.futurodev.projeto2.modulo3.model.Categoria;
+import br.com.futurodev.projeto2.modulo3.model.Produto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -23,6 +25,9 @@ public class CategoriaController {
 
     @Autowired
     private CategoriaService categoriaService;
+
+    @Autowired
+    private ProdutoService produtoService;
 
     @ApiOperation("Salvar uma categoria")
     @PostMapping
@@ -44,8 +49,24 @@ public class CategoriaController {
     @DeleteMapping
     @ResponseBody
     public ResponseEntity<String> delete(@ApiParam(value = "ID da categoria", example = "1") @RequestParam Long idCategoria) {
-        categoriaService.deleteById(idCategoria);
-        return new ResponseEntity<String>("Categoria ID: " + idCategoria + ": deletado com sucesso!", HttpStatus.OK);
+
+        int contador = 0;
+        List<Produto> produtos = produtoService.getProdutos();
+
+        for (long i = 1; i <= produtos.size(); i++) {
+
+            if ((produtoService.getProdutoById(i).getCategoria().getId()) == idCategoria){
+                contador += 1;
+            }
+
+        }
+
+        if (contador == 0) {
+            categoriaService.deleteById(idCategoria);
+            return new ResponseEntity<String>("Categoria ID: " + idCategoria + " deletado com sucesso!", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<String>("Categoria ID: " + idCategoria + " não deletada. A categoria possui produtos cadastrados.", HttpStatus.OK);
+        }
 
     }
 

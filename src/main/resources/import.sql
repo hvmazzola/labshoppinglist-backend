@@ -8,14 +8,14 @@ INSERT INTO public.categoria(nome_categoria, descricao_categoria) VALUES ('Latic
 
 
 
-INSERT INTO public.produto(nome_produto, valor_produto, status_produto, id_categoria) VALUES ('Barra de Cereal de Chocolate com nozes', '4.90', false, 3);
-INSERT INTO public.produto(nome_produto, valor_produto, status_produto, id_categoria) VALUES ('Whey Protein Concentrado 80%', '109.59', true, 3);
-INSERT INTO public.produto(nome_produto, valor_produto, status_produto, id_categoria) VALUES ('Banana Caturra', '2.35', true, 1);
-INSERT INTO public.produto(nome_produto, valor_produto, status_produto, id_categoria) VALUES ('Tomate Cereja (Bandeja)', '8.25', false, 1);
-INSERT INTO public.produto(nome_produto, valor_produto, status_produto, id_categoria) VALUES ('Pasta de Dente Colgate Hortelã', '2.87', true, 2);
-INSERT INTO public.produto(nome_produto, valor_produto, status_produto, id_categoria) VALUES ('Shampoo Anticaspa Clear Men', '16.50', false, 2);
-INSERT INTO public.produto(nome_produto, valor_produto, status_produto, id_categoria) VALUES ('Energético Monster Pacific Punch', '7.97', true, 4);
-INSERT INTO public.produto(nome_produto, valor_produto, status_produto, id_categoria) VALUES ('Suco Del Vale Uva', '2.92', false, 4);
-INSERT INTO public.produto(nome_produto, valor_produto, status_produto, id_categoria) VALUES ('Leite Semidesnatado Tirol', '4.34', true, 5);
-INSERT INTO public.produto(nome_produto, valor_produto, status_produto, id_categoria) VALUES ('Queijo Mussarela Tirol', '6.27', false, 5);
+INSERT INTO public.produto(id_categoria, nome_produto, valor_produto, status_produto) VALUES (3, 'Barra de Cereal de Chocolate com nozes', '4.90', false);
+INSERT INTO public.produto(id_categoria, nome_produto, valor_produto, status_produto) VALUES (3, 'Whey Protein Concentrado 80%', '109.59', true);
+INSERT INTO public.produto(id_categoria, nome_produto, valor_produto, status_produto) VALUES (1, 'Banana Caturra', '2.35', true);
+INSERT INTO public.produto(id_categoria, nome_produto, valor_produto, status_produto) VALUES (1, 'Tomate Cereja (Bandeja)', '8.25', false);
+INSERT INTO public.produto(id_categoria, nome_produto, valor_produto, status_produto) VALUES (2, 'Pasta de Dente Colgate Hortelã', '2.87', true);
+INSERT INTO public.produto(id_categoria, nome_produto, valor_produto, status_produto) VALUES (2, 'Shampoo Anticaspa Clear Men', '16.50', false);
+INSERT INTO public.produto(id_categoria, nome_produto, valor_produto, status_produto) VALUES (4, 'Energético Monster Pacific Punch', '7.97', true);
+INSERT INTO public.produto(id_categoria, nome_produto, valor_produto, status_produto) VALUES (4, 'Suco Del Vale Uva', '2.92', false);
+INSERT INTO public.produto(id_categoria, nome_produto, valor_produto, status_produto) VALUES (5, 'Leite Semidesnatado Tirol', '4.34', true);
+INSERT INTO public.produto(id_categoria, nome_produto, valor_produto, status_produto) VALUES (5, 'Queijo Mussarela Tirol', '6.27', false);
 

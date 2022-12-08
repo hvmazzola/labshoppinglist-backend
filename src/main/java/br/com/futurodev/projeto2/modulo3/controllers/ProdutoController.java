@@ -27,6 +27,9 @@ public class ProdutoController {
     @Autowired
     private ProdutoService produtoService;
 
+    @Autowired
+    private CategoriaService categoriaService;
+
     @ApiOperation("Salvar um produto")
     @PostMapping
     public ResponseEntity<ProdutoOutput> cadastrar(@RequestBody ProdutoInput produtoInput) {
@@ -63,17 +66,19 @@ public class ProdutoController {
     }
 
     @ApiOperation("Informar Valor Total de Produtos Comprados")
-    @GetMapping
+    @GetMapping(value = "/totalcomprado")
     @ResponseBody
     public ResponseEntity<String> getValorTotal() {
         double soma = 0;
         List<Produto> produtos = produtoService.getProdutos();
 
-        for (int i = 0; i <= produtos.size(); i++) {
-        if (produtos.get(i).isStatusProduto() == true){
-            soma += produtos.get(i).getValorProduto();
+        for (long i = 1; i <= produtos.size(); i++) {
+
+            if ((produtoService.getProdutoById(i).isStatusProduto()) == true){
+                soma += (produtoService.getProdutoById(i).getValorProduto());
+            }
+
         }
-    }
     return new ResponseEntity<String> ("Valor Total de Produtos Comprados: " + soma + " reais.", HttpStatus.OK);
     }
 
@@ -86,6 +91,7 @@ public class ProdutoController {
         produto.setNomeProduto(produtoInput.getNomeProduto());
         produto.setValorProduto(produtoInput.getValorProduto());
         produto.setStatusProduto(produtoInput.isStatusProduto());
+        produto.setCategoria(categoriaService.getCategoriaById(produtoInput.getIdCategoria()));
         return produto;
     }
 
@@ -95,6 +101,7 @@ public class ProdutoController {
         produtoOutput.setNomeProduto(produto.getNomeProduto());
         produtoOutput.setValorProduto(produto.getValorProduto());
         produtoOutput.setStatusProduto(produto.isStatusProduto());
+        produtoOutput.setIdCategoria(produto.getCategoria().getId());
         return produtoOutput;
     }
 
