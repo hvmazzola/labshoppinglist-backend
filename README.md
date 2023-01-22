@@ -1,4 +1,4 @@
-<h1 align="center"> Projeto 2 do Módulo 3 do curso FuturoDEV SENAI </h1>
+<h1 align="center"> Projeto 2 do Módulo 3 do curso FuturoDEV SENAI - LabShoppingList </h1>
 
 ### Tópicos 
 
