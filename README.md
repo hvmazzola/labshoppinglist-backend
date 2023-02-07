@@ -1,4 +1,4 @@
-<h1 align="center"> Projeto 2 do Módulo 3 do curso FuturoDEV SENAI </h1>
+<h1 align="center"> Projeto 2 do Módulo 3 do curso FuturoDEV SENAI - LabShoppingList </h1>
 
 ### Tópicos 
 
@@ -19,7 +19,7 @@
 <p align="justify">
  Projeto em desenvolvimento para o curso de desenvolvimento WEB do projeto FuturoDEV do SENAI. O projeto é o terceiro projeto geral do curso e o segundo do terceiro e último módulo.
  
- O projeto se trata de uma aplicação back-end para o cadastro de produtos de mercado e duas categorias, permitindo a edição exclusão e adição dos mesmos.
+ O projeto se trata de uma aplicação back-end para o cadastro de produtos de mercado e suas categorias, permitindo a edição exclusão e adição dos mesmos.
  
  Abaixo é possível ver o modelo relacional do projeto:
  
